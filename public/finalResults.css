@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: rgb(230, 230, 250);
+}
+
+input {
+  margin: 5px 0;
+  padding: 2px 5px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+h1 {
+  color: blue;
+  margin: 40px 0 15px;
+  text-shadow: 1px 1.4px black;
+}
+
+button {
+  margin: 5px 0 0;
+  padding: 5px 10px;
+  background: linear-gradient(90deg, rgb(223, 192, 136), orange);
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: 0.8px solid #ddd;
+}
+
+button:hover {
+  background: linear-gradient(90deg, rgb(184, 157, 107), rgb(209, 137, 3));
+  cursor: pointer;
+}
+
+table {
+  text-align: center;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #eee;
+}
+
+th {
+  background-color: blue;
+  color: white;
+}
+
+tr:hover {
+  background-color: rgb(219, 219, 247);
+}
+
+th,
+td,
+tr {
+  padding: 5px 20px;
+  border: 1px solid black;
+}
+
+i {
+  color: red;
+  cursor: pointer;
+}
+
+.goBack {
+  text-decoration: none;
+  background: linear-gradient(40deg, orange, rgb(231, 201, 144));
+  padding: 3px 5px;
+  color: white;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  margin-top: 30px;
+}
+
+.goBack:hover {
+  background: linear-gradient(45deg, blue, rgb(138, 138, 255));
+}
