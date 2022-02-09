@@ -41,17 +41,16 @@ const personSchema = new mongoose.Schema({
 
 const Person = mongoose.model("Person", personSchema);
 let person;
-//question partitions and fetching
-let idx = 0;
-let totParts = 1;
-let totQuestions = 0;
 let found = false;
+let questions = [];
 
 app.get("/", function (req, res) {
   res.render("login");
 });
 
 app.post("/login", function (req, res) {
+  found = false;
+  questions = [];
   person = new Person({
     name: req.body.name,
     score: 0,
@@ -72,8 +71,6 @@ app.post("/login", function (req, res) {
   });
 });
 
-let questions = [];
-
 app.get("/questions", function (req, res) {
   Question.find(function (err, foundQuestions) {
     if (!err) {
@@ -90,9 +87,6 @@ app.get("/questions", function (req, res) {
         });
         res.render("index", {
           questions: shuffledQuestions,
-          totParts: totParts,
-          idx: idx,
-          totQuestions: totQuestions,
         });
       }
     }
@@ -142,6 +136,10 @@ app.post("/", function (req, res) {
         }
       }
     );
+  } else {
+    person.save().then(() => {
+      console.log("Successfully added new person's score!");
+    });
   }
 
   res.redirect("/final-results");
